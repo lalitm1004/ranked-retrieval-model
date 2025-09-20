@@ -1,0 +1,25 @@
+What is binance?
+
+The Binance Exchange is a leading cryptocurrency exchange founded in 2017 in Hong Kong. It features a strong focus on altcoin trading. Binance offers crypto-to-crypto trading in more than 500 cryptocurrencies and virtual tokens, including Bitcoin (BTC), Ether (ETH), Litecoin (LTC), Dogecoin (DOGE), and its own token Binance Coin (BNB). In 2018, it moved its company headquarters to Malta, EU, in response to China's strict regulations on crypto exchange businesses. Primarily known for crypto-to-crypto trading—trading between two cryptocurrency pairs —the Binance exchange has among the lowest transaction fees for cryptocurrency exchanges. It has high liquidity and offers discounts to users who pay in the native BNB cryptocurrency tokens.
+
+The name "Binance" is a combination of the words "bitcoin" and "finance." It claims high standards of safety and security, with multi-tier and multi-clustered architecture, and delivers high processing throughput—it claims it has the capacity to process around 1.4 million orders per second. It supports trading in more than 500 coins, including bitcoin, ethereum, litecoin, and its own native BNB tokens. Like other crypto exchanges, Binance offers services around the trading, listing, fundraising, and de-listing or withdrawal of cryptocurrencies. Cryptocurrency enthusiasts willing to launch their own tokens can use Binance for raising funds through initial coin offerings (ICOs). Binance is used by a large number of traders and participants for exchanging and investing in various cryptocurrencies.
+
+To start trading, users have to complete the necessary KYC requirements. Upon successful trading account creation, users can add cryptocurrency funds to their public wallet address, provided by Binance, to start trading.
+
+The Binance exchange supports three types of trade orders: limit, market, and stop-limit orders. Limit orders are executed only at the limit price set by the trader. Market orders are executed immediately at the best available market price. Stop limit orders become valid orders only when the price reaches a specified level. Binance Markets Limited, a UK subsidiary of Binance.com, was banned from offering regulated services to customers in Britain by the Financial Conduct Authority (FCA), the country's regulatory agency, in June 2021. The agency's notice prevents the subsidiary from offering trading services in cryptoassets and derivatives to customers in Britain. The company's social media team clarified that the ban had no effect on service offerings, such as trading, by Binance.com to users in the United Kingdom. In addition to exchange-specific services, Binance also offers other tools, platforms, and services. Some of them are as follows:
+
+Binance Earn is a platform for staking or earning interest by depositing stablecoins with the exchange. Depending on the coin and the tenure, the exchange offers investors multiple options and interest rates for these coins.
+
+Binance Visa Card is a credit card that allows users to convert their cryptocurrency into fiat current and spend it on products and services. While the conversion does not incur adminstrative fees, third-party fees, in the form of payment network fees, apply.
+
+BInance smart pool enables miners to switch between different cryptocurrencies for mining to optimize and multiply their income.
+
+Binance has a blockchain technology incubator called Binance Labs, which focuses on nurturing promising pre-ICO stage projects. It helps deserving cryptocurrency project teams by providing necessary funding for development, advisory resources, and a launchpad for any necessary listing and fundraising exercises.
+
+Binance also offers a site called LaunchPad for hosting new and emerging blockchain projects and API interfaces. As of March 2021, 42 projects have been launched.
+
+It launched its own Binance Coin (BNB) cryptocurrency through an ICO in July 2017. BNB has a market cap of around $36.4 billion, as of March 2021. It is set to become the native currency of the decentralized Binance exchange. Binance Coin (BNB) is the platform's internal token. It is used to facilitate crypto trading on the Binance exchange. The coin was launched during an initial coin offering (ICO) in July 2017. Binance offered 20 million BNB tokens to angel investors, 80 million tokens to the founding team, and the remaining 100 million tokens to the various participants through the ICO process.
+
+Almost half the funds raised during the ICO process were intended to be used for Binance branding and marketing, while around one-third were used to build the Binance platform and perform necessary upgrades to the Binance ecosystem.
+
+Binance Coin runs on the Ethereum blockchain with the ERC 20 standard, and has a cap of 200 million BNB tokens. As of Q1 2021, one BNB is worth around $650. It is the third most valuable blockchain-based token by market cap, at roughly $3.6 billion.  

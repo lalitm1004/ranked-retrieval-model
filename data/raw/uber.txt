@@ -1,0 +1,45 @@
+All about Uber?
+
+From that initial launch in San Francisco, Uber started its global take-over, expanding to a new US city every month from May 2011. Its first international launch was Paris in 2011, quickly followed by Toronto, London, Sydney, and Johannesburg.
+
+Today, Uber is available in over 60 countries and over 400 cities worldwide. The driving force behind this expansion and adoption was, of course, the technology and the business model.
+
+Taking the first core element, technology, Uber relies on app software and smartphones. Put simply, you install the Uber app on your smartphone, set a pick-up point and destination from a map and then tap to request an Uber driver.
+
+You have a choice of cars ranging from standard to luxury, while the driver’s name, number plate and car are visible when they are on their way. Due to the GPS and map capabilities of the app, you are given a fare estimate, estimated time of arrival and shown the route the driver will take. In short, everything is transparent.
+
+At the end of the trip, there is no need to hand over any cash as payments are taken from debit or credit cards stored in the app itself. There are also other additional features such as splitting fares with friends, connecting your smartphone music playlist to some car stereos and sharing your route with family and friends.
+
+Uber is a transportation company with an app that allows passengers to hail a ride and drivers to charge fares and get paid. More specifically, Uber is a ridesharing company that hires independent contractors as drivers. It's one of many services today that contribute to the sharing economy, supplying a means of connecting existing resources instead of providing the physical resources themselves.
+
+The company was founded by Travis Kalanick and Garrett Camp in 2009, and is headquartered in San Francisco. The company has an estimated 110 million users worldwide.
+
+How does it work?
+
+Uber links passengers with drivers using the Uber app. Generally, the drivers own their own car. The company does also offer rental or lease on cars through third party partners like Hertz, Get Around and Fair. UberFleet is an app for those managing squads of drivers.
+
+Uber offers rides under a dynamic pricing model for both drivers and passengers. Passengers needing a ride can use the app to hail a driver with an estimated price that is dependent on the destination as well as the demand at the time.
+
+Uber incentivizes drivers to pick up more fares in peak busy hours by paying more during those times. This means that riders are charged more at busy times in order to help ensure the needed number of drivers are available. During holidays, such as New Year’s Eve, a passenger can expect to pay a high price. However, unlike with a taxi, they can expect that the price will attract a driver, as opposed to a car that might never have shown up from a taxi service.
+
+Uber also offers bicycle and electric car rental in some areas and developmental projects in autonomous driving.
+
+Benefits
+
+Using a ridesharing app like Uber has several advantages over more traditional transportation methods. As mentioned, Uber's dynamic pricing model attracts drivers to certain areas at critical times, making it more likely that a car will be available during times of high passenger need.
+
+Uber's app also let's users see a map that displays all the potential drivers in the area. Once a driver has been chosen, the passenger can watch their driver navigate to the pick-up location in real-time, with updates on estimated time of arrival. This allows for ultimate convenience when coordinating a ride.
+
+From a broader perspective, Uber shares a benefit with other components of the sharing economy. This benefit is that companies that follow a sharing model are theoretically able to more efficiently use underutilized assets such as tools, clothing, houses, and in Uber's case, cars.
+
+Challenges
+
+Although Uber generally increases the convenience and efficiency of ridesharing using its app, there are ways in which this method of offering and getting rides can create new challenges for passengers and drivers alike.
+
+For one, passengers need access to an app-capable device and an internet connection in order to hail an uber. Passenger's cannot hail an uber directly from the street. Not having a smartphone or computer prevents someone from using Uber to hail themselves a ride.  
+
+In addition, although Uber drivers must pass a background check to become a driver, it's not perfect, and Uber does not independently test driver skills in the hiring process. This results in inconsistencies in driver quality, which leads to customer complaints and potentially a damaged reputation for Uber.
+
+Because the company manages employment and facilitates rides remotely, it's nearly impossible for the company to adequately handle incidents over such a large breadth of contexts and interactions. This is problematic for both riders and drivers.
+
+Uber's dynamic pricing model can also cause difficulty for those drivers who rely on Uber as their primary source of income, because fares can change quickly, and changes are difficult to predict.

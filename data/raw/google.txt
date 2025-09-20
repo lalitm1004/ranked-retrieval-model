@@ -1,0 +1,140 @@
+Originally known as BackRub. Google is a search engine that started development in 1996 by Sergey Brin and Larry Page as a research project at Stanford University to find files on the Internet. Larry and Sergey later decided the name of their search engine needed to change and chose Google, which is inspired from the term googol. The company is headquartered in Mountain View, California.
+
+Google beginnings.
+How to open Google.
+Other Google products and services.
+Google Easter eggs.
+Discontinued Google services.
+Related pages.
+Tricks every Google user should know.
+Internet help and support.
+Google beginnings
+
+The domain google.com was registered on September 15, 1997, and the company incorporated on September 4, 1998. The picture below is a capture of the site from The Internet Archive of what Google looked like in 1998.
+
+Google in 1998
+
+Note
+As of August 10, 2015, Google is a subsidiary of the Alphabet Inc.
+What helps Google stand out from its competition, helps it continue to grow, and be the number one search engine is its PageRank technique that sorts search results. While being one of the best search engines on the Internet, Google also incorporates many of its other services, like Google Maps and Google Local, to provide more relevant search results.
+
+How to open Google
+
+To use Google search, open the address google.com in your web browser. In the search box, type a word or phrase, and press Enter or click the Google Search button.
+
+Other Google products and services
+
+Android - The most widely used operating system for smartphones.
+Blogger - View and create a personal blog.
+Chromebook - Laptop using the Google Chrome OS.
+Chrome OS - Operating system developed by Google for laptop and portable computers.
+G Suite - A suite of cloud software for businesses.
+Gmail - Free online e-mail service with over 1 GB of storage and the best spam protection available.
+Google Ads - Formerly known as Google AdWords, Google Ads is a service that enables users to pay to advertise on the Google search engine and other websites using Google AdSense.
+Google AdSense - A service that pays website publishers or blog developers to show advertisements on their site.
+Google AdWords - Service that enables users to pay to advertise on the Google search engine and other websites using Google AdSense.
+Google Alerts - Create alert text messages sent to an e-mail address each day or as it happens of web searches, news searches, etc.
+Google Analytics - Google Analytics allows users to monitor and create reports of visitors to their website.
+Google App Engine - A service that provides users the ability to create scalable web services that use Google's resources.
+Google Assistant - Digital assistant service by Google that uses artificial intelligence to respond to voice requests.
+Google Blog - A blog maintained by Google that helps give an insight into the company.
+Google Books - Another fantastic service from Google containing hundreds of thousands of books that can be searched.
+Google Calendar - A way to organize your schedule, synchronize, and share events with your friends.
+Google Chrome - The most popular desktop Internet browser.
+Google Classroom - Google service that allows students and teachers to participate in a digital class.
+Google Cloud - Service for businesses to store data and run applications in the cloud, and backup and disaster recovery.
+Google CSE (Custom Search Engine) - Service that allows you to create a custom Google Search engine.
+Google Daydream View - VR headset.
+Google Developer - A place to find all Google developer documentation, resources, events, and products.
+Google Docs - A fantastic free solution from Google that allows you to create documents, open Microsoft Word documents, and share your documents with other users that have Internet access.
+Google Drive - A cloud storage service from Google introduced on April 24, 2012, that allows users to view, edit, and store their documents and files in the Google cloud.
+Google Duo - A cross-platform video calling application for Android smartphones, and other Google and third-party operating systems.
+Google Earth - A fantastic software program that allows a person to view almost everywhere on earth, get directions, find close shops and places of interest, and much more.
+Google Express - A delivery service available in most states.
+Google Fiber - A limited service available in some places in the United States that offers a fiber connection to the Internet.
+Google Fonts - A collection of thousands of fonts for use on your web page.
+Google Forms - A feature of Google Docs that allows users to create a form that collects information for personal or business use.
+Google Fuchsia - An open source operating system.
+Google Glass - AR (augmented reality) glasses.
+Google Groups - Google's bulletin board with millions of users and postings.
+Google Hangouts - Communication platform for messaging, SMS, video chat, and VoIP.
+Google Home - Voice activated virtual digital assistant that assists users with questions.
+Google Homepage - Google's main page and search engine.
+Google Images - Google search that allows you to search for images instead of text.
+Google Keep - Fantastic service that allows you to keep and store notes and tasks.
+Google Lens - An image recognition technology that identifies objects and displays information about them using Google Search.
+Google Mail - More well-known as Gmail, the most popular e-mail host.
+Google Maps - A great feature that enables users to search for directions from one location to another, search for local businesses, and more.
+Google Moon - In celebration of the first Moon landing, Google created this page with a map of our Moon and each of the moon landings.
+Google My Maps - Feature in Google Maps that allows its users to create custom maps for personal use or share with others.
+Google Nest - Google home automation and security products, including the Nest thermostat.
+Google News - Great news site automatically generated using the results of news sites queried by Google.
+Google Ngram Viewer - Great tool that allows you to search many books and other printed materials for the frequency of words or phrases.
+Google Now - Service primarily used by mobile users that gives the most relevant information relating to you based of your searching and driving habits.
+Google Patents - Allows users to search over 7 million patents.
+Google Photos - Online cloud storage for photos and videos, allowing users to upload, organize, and share with other users.
+Google Pixel - Google smartphone.
+Google Play - A service that allows users to search and download apps, books, movies, and music for Android devices.
+Google Play Music- A service that allows users to stream, download, and upload music to a person library, and create and listen to radio stations. It is usable across multiple devices. Additionally, Google Play Music unlimited song streaming for a monthly fee.
+Google Scholar - Allows users to search for scholarly literature.
+Google Sheets - A fantastic free solution from Google that allows you to create spreadsheets, open Microsoft Excel spreadsheets, and share your spreadsheets with other users that have Internet access.
+Google Shopping - Formerly known as Froogle, Google Shopping is a search service for finding products based on prices, location, type, etc.
+Google Sites - A service that enables users to create and share websites.
+Google Slides - A presentation program similar to Microsoft PowerPoint.
+Google SMS - Enables users to send text messages over their mobile using SMS to get quick answers, such as driving directions, movie show times, local business listing, etc.
+Google Street View - A great service that allows anyone to drive down the streets around the world.
+Google Toolbar - For Microsoft Windows Internet Explorer and Firefox users. Google Toolbar add-on enables users using these browsers to have access to Google search and other Google features any time the browser is open.
+Google Translate - Translate a foreign language web page or text into your language.
+Google Trends - List of the 100 most active search queries and comparison of what people are searching for on Google.
+Google URL Shortener - Service to shorten long URLs.
+Google Video - Search for online videos hosted by Google, and transcript text of videos and TV shows.
+Google Voice - Use Google search over the phone using your voice.
+Google Wallet - A payment service developed by Google that allows people to send and receive money from other people.
+Google WebMaster tools - Another great service provided by Google that enables webmasters to view, maintain, and control how Google indexes their web page.
+Google.org - The philanthropic arm of Google.
+My Activity - Utility that tracks your history when you use Google's services.
+Quick, Draw! - Drawing game to help test artificial intelligence.
+Stadia - A cloud-based gaming service developed by Google.
+Waze - A GPS navigation application for mobile devices.
+Wing - A drone delivery service that delivers light-weight items over short distances.
+YouTube - Video service that allows users to freely upload videos and view others videos.
+Tip
+We also suggest you visit our Google tips page for additional tips on using all Google services.
+Google Easter eggs
+
+Google also has several well-known hidden Easter eggs throughout its services. Below is a list of these hidden gems.
+
+Google H4x0r - Display Google's search page and results in leet speak.
+Google Klingon - Display Google's search page and results in Klingon.
+Google Pig Latin - Display Google's search page and results in Pig Latin.
+Discontinued Google services
+
+Below is a listing of many discontinued Google services that are no longer supported, deprecated, merged into other products, or sold off to other companies.
+
+Google+ - Google social networking site that was discontinued for consumers on April 2, 2019. Although no longer used by the public, Google+ is still used internally at Google as a way for employees to communicate and share ideas.
+Google Allo was a mobile instant messaging app developed for Android and iOS to exchange messages, images, files, and videos. Allo was discontinued on March 12, 2019.
+Google Answers - Discontinued in December 2006. The site is still online, but can only be read and not edited or have new questions be asked.
+Google Base - A database service provided by Google the service and API was deprecated on December 17, 2010.
+Google Buzz - Discontinued on December 15, 2011, Google Buzz was a social networking site replaced by Google+.
+Google Checkout - Service that provided users and sellers with an easy and secure method of paying each other. The service was discontinued on November 20, 2013, and replaced with Google Wallet.
+Google Code - Allowed users to view source code on websites that was discontinued on March 12, 2015. Thousands of the Google open source products were moved to GitHub.
+Google Code Search - A search tool that allowed developers to search for open source code.
+Google Deskbar and Google Desktop - Small software utility that adds a Google search to the Microsoft Windows Taskbar allowing users to search without even opening a browser.
+Google Dictionary - An online dictionary search service that was discontinued as it became integrated into the Google search.
+Google Directory - Browse the open directory of web pages modified to list the directory listings by Google's PageRank technology.
+Google Fast Flip - An online news aggregator from Google that was discontinued in September 2011.
+Google Helpouts - Originally launched in November 2013, Google Helpouts was a service that allowed users to share their knowledge and experience with other users with live help and video. The service officially closed on April 20, 2015.
+Google Labs - A section of Google that once displayed upcoming features. This section was later discontinued.
+Google Market - The original location to find apps for Android. Google Market was rebranded into Google Play in 2012.
+Google Moderator - A tool from Google that allowed anyone to collect the best input from an audience of any size. The service was discontinued on June 30, 2015.
+Google Reader - An RSS/Atom reader that was discontinued on July 1, 2013.
+Google Sets - Type in a few keywords that are similar to pull up a listing of more words that relate to the words you typed.
+Google SketchUp - A tool for creating and sharing 3-D models that is now owned by Trimble on June 1, 2012.
+Google Talk - Instant Messenger program that used XMPP. In May 2013, Google announced plans to drop XMPP support for its own proprietary standard used with Google Hangouts.
+Google Tango - Augmented reality computing platform that was discontinued on December 15, 2017.
+Google Web Accelerator - For broadband users, Google Web Accelerator was used to help speed up browsing.
+iGoogle - Personalized Google page that allowed you to add links, RSS feeds, games, and much more.
+Orkut - A social networking site that provided a location to socialize with your friends and family, and meet new acquaintances from all around the world. Google stopped the Orkut service on September 30, 2014.
+Picasa - Was a free Microsoft Windows software program to view images, manage images, and much more. The program was retired and replaced with Google Photos on March 15, 2016.
+Project Ara - An experimental smartphone that featured a modular design. The project was canceled in 2016.
+YouTube Video Editor - Was a free feature of YouTube that gave users the ability to edit videos. As of September 20, 2017, Google discontinued the service, but kept the ability to allow users to add enhancements to their videos.

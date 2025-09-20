@@ -1,0 +1,27 @@
+What is hp?
+
+Hewlett-Packard (HP) was founded in 1939 by William Hewlett and David Packard and was known for its hardware advancements, such as personal computers, and their printers. Hewlett-Packard had acquired many companies over the decades, one of the most notable being Palm, Inc. in 2010. In 2015, Hewlett-Packard split into two companies – Hewlett-Packard, Inc. and Hewlett Packard Enterprise Company. HP, Inc. focuses on technology and print production, while Hewlett Packard Enterprise (or HPE) has expanded to software, the cloud, and data storage.
+
+HP is known for its laptops and popular LaserJet and InkJet printers. It offers mobile applications that make printing more mobile-friendly and accessible. HP is strongly committed to sustainability. It publishes an annual Sustainable Impact report and publicly states goals for improvement and methods it’s using to improve sustainability. HP is currently using ocean-bound plastic to create new electronics, including a notebook laptop made partially from recycled material. It is also committed to racial diversity in the workplace, transparently listing its employee demographics in its open report and developing specific hiring goals for minorities and people of color.
+
+In 2016, about a year after Hewlett-Packard announced its split, HPE drew questions about its sustainability as a company: if it mainly dealt in hardware, how long would it be relevant? But shortly after that, HPE developed strategies for IT infrastructure that now include hybrid cloud options, cloud management, and virtual machines. HPE GreenLake is an IT-as-a-Service platform that manages workloads and software across on-premise data centers, other centers, and different cloud environments. GreenLake automates workload balancing across hybrid cloud environments and offers smooth cloud infrastructure options. HPE is keeping itself relevant in a rapidly changing technology environment, where software and flexible data management is just as important as hardware.
+
+HP was founded in 1939 by William Hewlett and David Packard in a garage behind the Packard's California home. Its first product, an audio oscillator for measuring sound, was the beginning of a line of electronics that made HP an international supplier of test and measurement instruments. Walt Disney Studios, HP's first big customer, purchased eight oscillators to develop and test a new sound system for the movie "Fantasia."
+
+HP entered the computer field in 1966 with the 2116A, the first model of the series named HP 1000 a few years later. The 2116A was designed to gather and analyze the data produced by HP instruments. Lasting nearly four decades, HP 1000 computers were used for process monitoring and control, alarm management and machine monitoring.
+
+In 1972, HP branched into business computing with the 3000 series, a multiuser system that became well known for its high reliability, especially for that time. The very successful 3000 family continued for more than three decades. Also in 1972, HP introduced the first scientific handheld calculator, the HP-35, obsoleting the slide rule and ushering in a new age of pocket-sized calculators. In 1982, the first HP 9000 workstation was introduced.
+
+HP's first personal computer was the Touchscreen 150, a non-standard MS-DOS computer that gained only modest acceptance. In 1985, it introduced its first completely IBM-compatible PC, the 286-based Vectra model and has offered a variety of laptop and desktop PCs ever since.
+
+In 1984, HP revolutionized the printer market with its desktop LaserJet printer, which has set the standard for the industry. HP continues its leadership in this area with routine advances in resolution, speed and price. It has become a formidable contender in desktop and network printers.
+
+In 1986, it introduced Precision Architecture, a RISC-based architecture for its 3000 and 9000 series product lines, which proved very successful. In 1989, HP acquired Apollo Computer, a workstation manufacturer, and combined technologies to become a leader in the field of Unix-based workstations.
+
+HP sells over 10,000 different products in the electronics and computer field and has gained a worldwide reputation for its quality engineering. In 1999, HP spun off its test and measurement divisions into a new company named Agilent Technologies. The business units involved grossed nearly $8 billion in 1998 and employed 45,000 people worldwide. Agilent is headquartered at 395 Page Mill Road, the site where Hewlett and Packard constructed their first building in 1943.
+
+In 2002, HP acquired Compaq Computer. Since Compaq had acquired Digital Equipment Corporation in 1998, the Compaq acquisition resulted in HP absorbing its major competitor going back to the early days of minicomputers and lasting for many years. In 2008, the company acquired EDS, the largest computer services company in the U.S., creating a behemoth of more than 300,000 people worldwide (see EDS).
+
+In 2011, HP acquired Palm and began to develop the TouchPad tablet based on Palm's webOS (see TouchPad).
+
+In 2011, HP announced it would sell its $40 billion Personal Systems Group (PC division), but reversed that decision after a management change. However, three years later, HP decided to split the company into HP, Inc. and HP Enterprise.

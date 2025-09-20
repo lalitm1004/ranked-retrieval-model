@@ -1,0 +1,126 @@
+If you are a restaurant owner or marketing manager for a restaurant, you’ll love Zomato. But what is Zomato, exactly, and why would you love it? We’ll introduce you to the platform, how to set up your business account, and everything that Zomato has to offer to help you boost your business.
+
+What is Zomato?
+Zomato has been around since 2008 and acquired Urbanspoon along with its client-base and technology in 2014. It provides your potential customers with a database of restaurants to discover local eateries. They can view photos, menus, and reviews to get an idea of what the restaurant has to offer. Your customers can also make reservations, order takeout, and leave reviews of their own.
+
+Zomato provides products such as table management and online ordering for businesses along with advertising and other merchant tools. It’s built to help restaurants thrive in the online marketspace. Connecting customers to restaurants is Zomato’s main goal. They work to ensure customers have the best experience at any restaurant found on their platform.
+
+Developing your Zomato business account and profile is a great way to boost your restaurant’s online reputation.
+
+Claim Your Restaurant or Create a New Listing on Zomato
+Just like every other platform, you will first need to check to see if your restaurant already has a listing on Zomato. If you find it, you’ll start with claiming your restaurant. Otherwise, you’ll begin by creating a new listing instead.
+
+1. Claim or Start Your Listing
+
+First, visit Zomato’s business homepage to search for your restaurant. If you can’t find your listing you can add a restaurant here. Make sure you’re on the business search page and not the user-facing search engine.
+
+If your listing is in Zomato and unclaimed, you will see the option to claim it with a green button. If it’s already claimed, you will need to track down the owner of the page or contact Zomato for help.
+
+Filippi's Pizza Grotto in Little Italy has not yet claimed their listing. If you were the restaurant owner, you would click the green outlined "Claim this restaurant" button. 
+In order to claim your listing, you’ need verification that you are the owner or manager of the business. Zomato asks for a document of proof, like your certificate of registration. A representative from Zomato will then follow-up with you to confirm ownership and assist you with the next steps.
+
+Once you’ve submitted your proof of ownership, Zomato will verify your claim by sending an SMS message to the phone number you provided. Add this code on Zomato’s website to finish up your claim.
+
+2. Set Up Your Business Owner Account
+
+Next, create your Zomato account by providing your full name, email address, and a password. Facebook or Google are also options for login as well.
+
+3. Add Your Restaurant To Your Zomato Account
+
+Add your newly created or claimed listing to your Zomato account by filling out the “Add a Restaurant” form. You’ll enter the restaurant’s name, city, location, and phone number. You’ll also see a spot that asks if you are the owner/manager and if you’re open for business.
+
+4. Optimize Your Zomato Restaurant Listing
+
+Now it’s time to make your profile more robust. There are several optional pieces of information that you can provide to help people find your restaurant. These are essential if you want your business to stand out in the competitive landscape.
+
+People looking for a place to eat on Zomato use filters to narrow down their search to exactly what they’re looking for (like open hours, cuisine type, and free Wi-Fi).
+
+A Zomato Search in Rochester, New York shows Dogtown. The profile has a 4.9 out of 5 rating with 323 votes and multiple photos of their food offerings to help entice more customers to come into their location.
+Here are some additional fields you can fill out in any Zomato Listing:
+
+Address/landmark
+Alcohol availability
+Services (Lunch, Dinner, Nightlife, etc.)
+Seating availability (if available, specify whether it is indoor or outdoor)
+Payment options
+Cuisine types
+Miscellaneous tags (Free Parking, Entry Free, ATM, etc.)
+Hours of operation
+Contact information (restaurant email and phone number)
+Zomato has a list of guidelines to help restaurants determine how to edit their own listings. It explains the importance of your business name, address, restaurant features, hours, photos, menus, and more.
+
+Your Zomato Restaurant Profile: What’s Included & What You Need to Know
+Once you’ve claimed your business, Zomato will create an overview (or profile) page. This is where users will land once they find your restaurant. Here they’ll view your photos, contact info, opening hours, address, average cost, and website. Your profile even includes other specific elements of your business like cuisines if you offer breakfast or free WiFi.
+
+Each restaurant profile has buttons for users to navigate quickly through Zomato. They can choose things like “Bookmark,” “Been Here,” “Order Online.” Your customers can also view and download your menu. This is great for you because they’ll ultimately use it to order food. However, you have to enable this functionality within Zomato.
+
+All profile visitors are also able to rate your restaurant and write a review. Reviews are an important aspect of your Zomato profile since the impact of online reviews is so powerful when it comes to buying decisions.
+
+In fact, a survey by Podium shows clearly that reviews are extremely important for businesses.
+
+68% are willing to pay more for something they're sure is a better experience.
+93% say online reviews impact their purchasing decision.
+Even if you aren’t aware of reviews on your Zomato profile, it’s important to bring them into your marketing strategy. You need to address negative reviews, reward positive ones, and improve your offerings based on customer feedback.
+
+One competition-enhancing feature of Zomato is that your restaurant’s profile includes a sidebar with “Nearby Restaurants.” Each nearby establishment is listed alongside their average review rating. This is another reason boosting your own average score should remain a priority.
+
+This nearby restaurants widget shows a list of restaurants with Zomato ratings that range from 2.9 to 3.8.
+Zomato’s Products for Business
+Zomato offers a multitude of complementary products for business owners to grow their reach and build their online reputation. It helps to equip restaurants with things like:
+
+Ad banners
+Integrations for landing pages and Facebook
+Ordering and booking services
+POS systems
+Rewards programs
+Analytics
+Other tracking tools
+Advertising on Zomato
+
+Zomato claims “for every marketing dollar spent, Zomato returns over 8x the investment.” With 90 million monthly visits, it’s not hard to believe.  As a result, there are 12,000 restaurants advertising in 23 countries on their platform.
+
+You can advertise on Zomato using ad banners for desktop and mobile. Additional exposure is also given through Collections. Zomato’s analytics help you track the performance of your ad campaigns and find out more about who you’re reaching. There’s an even an additional tool to measure and track incoming calls (with recording and listening functionality).
+
+Website Widgets and Facebook Intgration
+
+Zomato has business widgets that you can add to your website informing your customers that you’re on Zomato. This might prompt them to leave a review or check for more social proof to verify the claims on your website.
+
+There are also widgets to accept reservations on your website, encourage interaction with your bookmarks, and inform your visitors of multiple locations.
+
+Zomato has a simple integration with Facebook as well. It adds a tab to your business’ Facebook page where visitors can see your Zomato reviews.
+
+Zomato Order
+
+Similar to GrubHub, DoorDash, and Uber Eats, Zomato offers its own food takeout and delivery service. Using it reduces the number of clicks between potential customers looking at your reviews and ordering from your restaurant. Simplifying the transition between your customers’ evaluation and decision stages is in your best interest. They’re less likely to choose a competitor along the way or simply get distracted.
+
+Accepting orders on Zomato is super simple. Each time you receive an order, your order management device will flash and beep. Tap "Accept" and set the expected delivery time accordingly. When the order's leaving the restaurant, tap "on the way" to let your customer know. 
+Zomato Trace
+
+Zomato Trace is the perfect pair to Zomato’s order delivery service. It gives you advanced control over the accuracy of your deliveries and time estimates. Trace includes delivery tracking, live traffic condition reports, the ability to replay past trips, and see real-time driver locations.
+
+This service can be integrated with your POS, order system, or mobile app. You can also use an internal delivery management application to provide your drivers with routes.
+
+Zomato for Business App
+
+The Zomato for business mobile app allows you to take control over your business listing in an expansive and powerful way. Manage your reviews. Review any new photo uploads and update your listings information. Check on your analytical data. Create promotions and post events to your profile for your customers to find. There is also a space to add seasonal and special menus.
+
+food@work
+
+The food@work app is owned by Zomato and makes for a seamless cash-free mobile food-service experience. It’s perfect for food trucks or vendors who often serve at festivals or large events. On this app, your customers can order ahead of time, skip long lines, and use self-service kiosks.
+
+Zomato Gold
+
+Zomato allows their users to join an exclusive “club” or loyalty program for a subscription fee. It’s called Zomato Gold. After they join, when customers visit your restaurant, they’ll earn Gold if they show their unique Gold ID to a member of your staff during their visit. Restaurants who participate in the Gold program usually offer their customers some sort of perk, like a complimentary drink or meal.
+
+Trending Restaurants on Zomato’s Homepage
+
+If your business gets a lot of reviews on a weekly basis and maintains a positive average, you could end up trending on Zomato’s homepage. This is a highly competitive space to occupy. However, it requires your dedication and energy to get customers to leave reviews and engage with your brand on Zomato after each visit.
+
+Additional Considerations and Tools
+It’s important to understand exactly how people use Zomato and similar platforms. Knowing how someone uses technology to find businesses like yours helps you understand how best to reach them through it.
+
+In addition to external review listing websites like Zomato, Google, Yelp, and Facebook, people also turn to your website for more information about your restaurant. If you include all of your online reviews in one place, they will have little reason to return to a third-party website.
+
+Keeping your visitors on your website allows you to control the experience of your customers. It also boosts your SEO by giving more weight to your website’s relevancy when people are on the site longer and visit more pages.
+
+Try including your Zomato Reviews in your on-site reviews collections. If you haven’t yet added reviews to your website, consider building your website with reviews to convert more customers.

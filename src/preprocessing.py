@@ -1,15 +1,25 @@
 from pathlib import Path
-from collections import defaultdict
+from collections import defaultdict, Counter
 import os
-import spacy
 import json
 from typing import List, Tuple
-from collections import Counter
 from pydantic import BaseModel
 
-from spacy.lang.en import English
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+import string
 
-nlp = spacy.load("en_core_web_sm")
+nltk.download("punkt_tab")
+nltk.download("punkt")
+nltk.download("stopwords")
+nltk.download("wordnet")
+nltk.download("omw-1.4")
+
+stop_words = set(stopwords.words("english"))
+lemmatizer = WordNetLemmatizer()
+punct_set = set(string.punctuation)
 
 
 class ProcessedDocument(BaseModel):
@@ -51,16 +61,19 @@ class PreprocessingFactory:
         output_file = self.proc_docs_path / "docs.jsonl"
         with open(Path(output_file), "w", encoding="utf-8") as f:
             for doc in self.docs:
-                f.write(json.dumps(doc.model_dump_json()) + "\n")
+                f.write(doc.model_dump_json(indent=4))
 
     def __doc_process(self, doc_id: int, file_path: Path):
         text = file_path.read_text(encoding="utf-8")
-        doc = nlp(text)
+
+        raw_tokens = word_tokenize(text)
 
         tokens: List[str] = [
-            token.lemma_
-            for token in doc
-            # if not any([token.is_space, token.is_stop, token.is_punct])
+            lemmatizer.lemmatize(token.lower())
+            for token in raw_tokens
+            if token.lower() not in stop_words
+            and token not in punct_set
+            and token.strip() != ""
         ]
 
         processed_doc = ProcessedDocument(
@@ -89,26 +102,20 @@ class PreprocessingFactory:
 
 
 if __name__ == "__main__":
-    from pathlib import Path
-
-    # Paths
     raw_path = Path("./data/raw")
     processed_path = Path("./data/processed")
-    processed_path.mkdir(parents=True, exist_ok=True)  # make sure folder exists
+    processed_path.mkdir(parents=True, exist_ok=True)
 
-    # Initialize preprocessing
     factory = PreprocessingFactory(docs_path=raw_path, proc_docs_path=processed_path)
 
-    # Quick check: print first few processed documents
     print("Processed Documents:")
-    for doc in factory.docs[:3]:
+    for doc in factory.docs:
         print(
             f"Doc ID: {doc.doc_id}, File: {doc.file_path.name}, Tokens: {doc.tokens[:10]}"
         )
 
-    # Quick check: print first few postings
     print("\nPosting List:")
-    for posting in factory.posting_list[:5]:
+    for posting in factory.posting_list:
         print(
             f"Token ID: {posting.token_id}, Token: {posting.token}, Postings: {posting.postings}"
         )

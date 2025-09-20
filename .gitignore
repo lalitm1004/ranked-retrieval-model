@@ -1,2 +1,6 @@
-uv.lock
 .venv
+
+data/processed/
+
+__pycache__
+*.pyc

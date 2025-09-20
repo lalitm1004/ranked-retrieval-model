@@ -56,7 +56,8 @@ def pos_mapping_helper(tag: str) -> str:
         return wordnet.NOUN
 
 
-def token_processing_helper(raw_tokens: List[str]) -> List[str]:
+def token_processing_helper(raw_text: str) -> List[str]:
+    raw_tokens = word_tokenize(raw_text)
     pos_tags = pos_tag(raw_tokens)
 
     processed_tokens: List[str] = []
@@ -102,9 +103,7 @@ class PreprocessingFactory:
     def __doc_process(self, doc_id: int, file_path: Path) -> None:
         text = file_path.read_text(encoding="utf-8")
 
-        raw_tokens = word_tokenize(text)
-
-        tokens: List[str] = token_processing_helper(raw_tokens)
+        tokens: List[str] = token_processing_helper(text)
 
         processed_doc = ProcessedDocument(
             file_path=file_path, doc_id=doc_id, tokens=tokens

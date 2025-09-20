@@ -1,21 +1,25 @@
-from pathlib import Path
-from collections import defaultdict, Counter
 import os
-import json
-from typing import List, Tuple
-from pydantic import BaseModel
+import string
+from collections import Counter, defaultdict
+from pathlib import Path
+from typing import Dict, List, Tuple
 
+import jellyfish
 import nltk
-from nltk.corpus import stopwords
+from nltk import pos_tag
+from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-import string
+from pydantic import BaseModel
+
 
 nltk.download("punkt_tab")
 nltk.download("punkt")
 nltk.download("stopwords")
 nltk.download("wordnet")
 nltk.download("omw-1.4")
+nltk.download("averaged_perceptron_tagger_eng")
+
 
 stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
@@ -36,12 +40,44 @@ class RawPosting(BaseModel):
 
 class Posting(BaseModel):
     token_id: int
-    token: str
-    postings: List[Tuple[int, int]]  # tuple(doc_id, t_f)
+    postings: List[Tuple[int, int]]  # (doc_id, term frequency)
+
+
+def pos_mapping_helper(tag: str) -> str:
+    if tag.startswith("J"):
+        return wordnet.ADJ
+    elif tag.startswith("V"):
+        return wordnet.VERB
+    elif tag.startswith("N"):
+        return wordnet.NOUN
+    elif tag.startswith("R"):
+        return wordnet.ADV
+    else:
+        return wordnet.NOUN
+
+
+def token_processing_helper(raw_tokens: List[str]) -> List[str]:
+    pos_tags = pos_tag(raw_tokens)
+
+    processed_tokens: List[str] = []
+
+    for token, tag in pos_tags:
+        if tag in {"NNP", "NNPS"}:
+            processed_tokens.append(jellyfish.soundex(token))
+        elif (
+            token.lower() not in stop_words
+            and token not in punct_set
+            and token.strip() != ""
+        ):
+            processed_tokens.append(
+                lemmatizer.lemmatize(token.lower(), pos=pos_mapping_helper(tag))
+            )
+
+    return processed_tokens
 
 
 class PreprocessingFactory:
-    def __init__(self, docs_path: Path, proc_docs_path: Path):
+    def __init__(self, docs_path: Path, proc_docs_path: Path) -> None:
         self.doc_dir: Path = docs_path
         self.proc_docs_path: Path = proc_docs_path
 
@@ -49,9 +85,9 @@ class PreprocessingFactory:
         self.postings: List[RawPosting] = []
 
         self.__dir_process()
-        self.posting_list = self.__posting_list()
+        self.posting_list: Dict[str, Posting] = self.__posting_list()
 
-    def __dir_process(self):
+    def __dir_process(self) -> None:
         for index, file_name in enumerate(os.listdir(self.doc_dir)):
             file_path: Path = self.doc_dir / file_name
 
@@ -59,22 +95,16 @@ class PreprocessingFactory:
                 self.__doc_process(doc_id=index, file_path=file_path)
 
         output_file = self.proc_docs_path / "docs.jsonl"
-        with open(Path(output_file), "w", encoding="utf-8") as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             for doc in self.docs:
                 f.write(doc.model_dump_json(indent=4))
 
-    def __doc_process(self, doc_id: int, file_path: Path):
+    def __doc_process(self, doc_id: int, file_path: Path) -> None:
         text = file_path.read_text(encoding="utf-8")
 
         raw_tokens = word_tokenize(text)
 
-        tokens: List[str] = [
-            lemmatizer.lemmatize(token.lower())
-            for token in raw_tokens
-            if token.lower() not in stop_words
-            and token not in punct_set
-            and token.strip() != ""
-        ]
+        tokens: List[str] = token_processing_helper(raw_tokens)
 
         processed_doc = ProcessedDocument(
             file_path=file_path, doc_id=doc_id, tokens=tokens
@@ -86,17 +116,17 @@ class PreprocessingFactory:
             posting = RawPosting(token=token, doc_id=doc_id, t_f=count)
             self.postings.append(posting)
 
-    def __posting_list(self):
-        grouped_postings = defaultdict(list)
+    def __posting_list(self) -> Dict[str, Posting]:
+        grouped_postings: Dict[str, List[Tuple[int, int]]] = defaultdict(list)
         for raw_posting in self.postings:
             grouped_postings[raw_posting.token].append(
                 (raw_posting.doc_id, raw_posting.t_f)
             )
 
-        posting_list = []
+        posting_list: Dict[str, Posting] = {}
         for idx, (token, postings) in enumerate(grouped_postings.items()):
-            postings = sorted(postings, key=lambda x: x[1], reverse=True)
-            posting_list.append(Posting(token_id=idx, token=token, postings=postings))
+            postings_sorted = sorted(postings, key=lambda x: x[1], reverse=True)
+            posting_list[token] = Posting(token_id=idx, postings=postings_sorted)
 
         return posting_list
 
@@ -115,7 +145,7 @@ if __name__ == "__main__":
         )
 
     print("\nPosting List:")
-    for posting in factory.posting_list:
+    for token, posting in factory.posting_list.items():
         print(
-            f"Token ID: {posting.token_id}, Token: {posting.token}, Postings: {posting.postings}"
+            f"Token: {token}, Token ID: {posting.token_id}, Postings: {posting.postings}"
         )

@@ -62,7 +62,7 @@ def token_processing_helper(raw_tokens: List[str]) -> List[str]:
     processed_tokens: List[str] = []
 
     for token, tag in pos_tags:
-        if tag in {"NNP", "NNPS"}:
+        if tag in {"NNP", "NNPS"} and not token.isupper():
             processed_tokens.append(jellyfish.soundex(token))
         elif (
             token.lower() not in stop_words

@@ -66,7 +66,7 @@ def pos_mapping_helper(tag: str) -> str:
 
 
 def token_processing_helper(raw_text: str) -> List[str]:
-    raw_tokens = word_tokenize(raw_text)
+    raw_tokens = word_tokenize(" ".join(raw_text.split("-")))
     pos_tags = pos_tag(raw_tokens)
 
     processed_tokens: List[str] = []

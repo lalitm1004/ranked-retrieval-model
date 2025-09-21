@@ -59,24 +59,23 @@ class Search:
         return dot / (norm1 * norm2)
 
     def search(self, idf_values: Dict[str, float]) -> List[Path]:
-        # 1. Get cutoff idf
         idf_scores = list(idf_values.values())
         if not idf_scores:
             return []
+
         idf_scores.sort(reverse=True)
         percentile = Config.top_percentile / 100.0
-
         cutoff_index = int(len(idf_scores) * percentile)
         cutoff_index = max(1, min(cutoff_index, len(idf_scores)))
         cutoff_idf = idf_scores[cutoff_index - 1]
 
-        # 2. Sort query tokens descending by idf_score
         tokens_sorted = sorted(
             self.query_tokens, key=lambda x: x.idf_score, reverse=True
         )
 
-        # 3. Gather doc_ids from top query tokens above cutoff
         candidate_doc_ids: Set[int] = set()
+
+        # First pass: top-IDF tokens
         for qt in tokens_sorted:
             if qt.idf_score < cutoff_idf:
                 continue
@@ -92,10 +91,30 @@ class Search:
                 post = self.posting_list[qt.token]
                 for doc_id, _ in post.postings:
                     candidate_doc_ids.add(doc_id)
-            if len(candidate_doc_ids) >= Config.max_fetch_count:
+            if len(candidate_doc_ids) >= Config.max_fetch_pool:
                 break
 
-        # 4. Compute cosine similarity for each candidate doc
+        # Fallback: lower-IDF tokens if no candidates found
+        if not candidate_doc_ids:
+            for qt in tokens_sorted:
+                if qt.idf_score >= cutoff_idf:
+                    continue
+                if qt.is_soundex:
+                    if qt.token not in self.soundex_posting_list:
+                        continue
+                    soundex_post = self.soundex_posting_list[qt.token]
+                    for doc_id, _ in soundex_post.postings:
+                        candidate_doc_ids.add(doc_id)
+                else:
+                    if qt.token not in self.posting_list:
+                        continue
+                    post = self.posting_list[qt.token]
+                    for doc_id, _ in post.postings:
+                        candidate_doc_ids.add(doc_id)
+                if len(candidate_doc_ids) >= Config.max_fetch_pool:
+                    break
+
+        # Compute cosine similarity for all candidates
         scored_docs = []
         for doc_id in candidate_doc_ids:
             if doc_id not in self.document_vectors:
@@ -104,11 +123,12 @@ class Search:
             sim = self._cosine_similarity(self.query_vector, doc_vec)
             scored_docs.append((doc_id, sim))
 
-        # 5. Sort by similarity descending
+        # Sort by similarity descending
         scored_docs.sort(key=lambda x: x[1], reverse=True)
 
+        # Return only top 10 paths
         result_paths: List[Path] = []
-        for doc_id, _ in scored_docs:
+        for doc_id, _ in scored_docs[:10]:
             path = self.doc_id_to_path.get(doc_id)
             if path:
                 result_paths.append(path)

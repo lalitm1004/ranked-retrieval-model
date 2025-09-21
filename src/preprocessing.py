@@ -92,7 +92,7 @@ class PreprocessingFactory:
 
         posting_list, soundex_posting_list = self.__posting_list()
         self.posting_list: Dict[str, Posting] = posting_list
-        self.soundex_posting_list = soundex_posting_list
+        self.soundex_posting_list: Dict[str, Posting] = soundex_posting_list
 
     def __dir_process(self) -> None:
         for index, file_name in enumerate(os.listdir(self.doc_dir)):

@@ -11,6 +11,7 @@ from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from pydantic import BaseModel
+from wordfreq import top_n_list
 
 
 nltk.download("punkt_tab")
@@ -24,6 +25,9 @@ nltk.download("averaged_perceptron_tagger_eng")
 stop_words = set(stopwords.words("english"))
 lemmatizer = WordNetLemmatizer()
 punct_set = set(string.punctuation)
+
+# top 5000 most common English words
+common_words = set(top_n_list("en", 5000))
 
 
 class ProcessedDocument(BaseModel):
@@ -63,16 +67,20 @@ def token_processing_helper(raw_text: str) -> List[str]:
     processed_tokens: List[str] = []
 
     for token, tag in pos_tags:
-        if tag in {"NNP", "NNPS"} and not token.isupper():
-            processed_tokens.append(jellyfish.soundex(token))
-        elif (
+        if (
             token.lower() not in stop_words
             and token not in punct_set
             and token.strip() != ""
         ):
-            processed_tokens.append(
-                lemmatizer.lemmatize(token.lower(), pos=pos_mapping_helper(tag))
+            token_lemma = lemmatizer.lemmatize(
+                token.lower(), pos=pos_mapping_helper(tag)
             )
+            if tag in {"NNP", "NNPS"} and not (
+                token.isupper() or len(token) < 3 or token in common_words
+            ):
+                processed_tokens.append(jellyfish.soundex(token_lemma))
+            else:
+                processed_tokens.append(token_lemma)
 
     return processed_tokens
 

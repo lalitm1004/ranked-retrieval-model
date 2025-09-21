@@ -75,12 +75,7 @@ def token_processing_helper(raw_text: str) -> List[str]:
             token_lemma = lemmatizer.lemmatize(
                 token.lower(), pos=pos_mapping_helper(tag)
             )
-            if tag in {"NNP", "NNPS"} and not (
-                token.isupper() or len(token) < 3 or token in common_words
-            ):
-                processed_tokens.append(jellyfish.soundex(token_lemma))
-            else:
-                processed_tokens.append(token_lemma)
+            processed_tokens.append(token_lemma)
 
     return processed_tokens
 
@@ -94,7 +89,10 @@ class PreprocessingFactory:
         self.postings: List[RawPosting] = []
 
         self.__dir_process()
-        self.posting_list: Dict[str, Posting] = self.__posting_list()
+
+        posting_list, soundex_posting_list = self.__posting_list()
+        self.posting_list: Dict[str, Posting] = posting_list
+        self.soundex_posting_list = soundex_posting_list
 
     def __dir_process(self) -> None:
         for index, file_name in enumerate(os.listdir(self.doc_dir)):
@@ -123,20 +121,35 @@ class PreprocessingFactory:
             posting = RawPosting(token=token, doc_id=doc_id, t_f=count)
             self.postings.append(posting)
 
-    def __posting_list(self) -> Dict[str, Posting]:
+    def __posting_list(self) -> Tuple[Dict[str, Posting], Dict[str, Posting]]:
         grouped_postings: Dict[str, List[Tuple[int, int]]] = defaultdict(list)
+
         for raw_posting in self.postings:
             grouped_postings[raw_posting.token].append(
                 (raw_posting.doc_id, raw_posting.t_f)
             )
 
         posting_list: Dict[str, Posting] = {}
+        soundex_posting_list: Dict[str, Posting] = {}
+
         for idx, (token, postings) in enumerate(grouped_postings.items()):
             postings_sorted = sorted(postings, key=lambda x: x[1], reverse=True)
             posting_list[token] = Posting(token_id=idx, postings=postings_sorted)
 
-        return posting_list
+            token_soundex = jellyfish.soundex(token)
 
+            if token_soundex in soundex_posting_list:
+                existing_postings = {doc_id: t_f for doc_id, t_f in soundex_posting_list[token_soundex].postings}
+
+                for doc_id, t_f in postings_sorted:
+                    existing_postings[doc_id] = existing_postings.get(doc_id, 0) + t_f
+
+                updated_postings = sorted(list(existing_postings.items()), key=lambda x: x[1], reverse=True)
+                soundex_posting_list[token_soundex] = Posting(token_id=idx, postings=updated_postings)
+            else:
+                soundex_posting_list[token_soundex] = Posting(token_id=idx, postings=postings_sorted)
+
+        return posting_list, soundex_posting_list
 
 if __name__ == "__main__":
     raw_path = Path("./data/raw")
@@ -144,15 +157,3 @@ if __name__ == "__main__":
     processed_path.mkdir(parents=True, exist_ok=True)
 
     factory = PreprocessingFactory(docs_path=raw_path, proc_docs_path=processed_path)
-
-    print("Processed Documents:")
-    for doc in factory.docs:
-        print(
-            f"Doc ID: {doc.doc_id}, File: {doc.file_path.name}, Tokens: {doc.tokens[:10]}"
-        )
-
-    print("\nPosting List:")
-    for token, posting in factory.posting_list.items():
-        print(
-            f"Token: {token}, Token ID: {posting.token_id}, Postings: {posting.postings}"
-        )

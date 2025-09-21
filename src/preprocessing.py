@@ -46,6 +46,7 @@ class Posting(BaseModel):
     token_id: int
     postings: List[Tuple[int, int]]  # (doc_id, term frequency)
 
+
 class SoundexPosting(BaseModel):
     token_ids: List[int]
     postings: List[Tuple[int, int]]  # (doc_id, term frequency)
@@ -145,18 +146,26 @@ class PreprocessingFactory:
             token_soundex = jellyfish.soundex(token)
 
             if token_soundex in soundex_posting_list:
-                existing_postings = {doc_id: t_f for doc_id, t_f in soundex_posting_list[token_soundex].postings}
+                existing_postings = {
+                    doc_id: t_f
+                    for doc_id, t_f in soundex_posting_list[token_soundex].postings
+                }
                 soundex_posting_list[token_soundex].token_ids.append(idx)
 
                 for doc_id, t_f in postings_sorted:
                     existing_postings[doc_id] = existing_postings.get(doc_id, 0) + t_f
 
-                updated_postings = sorted(list(existing_postings.items()), key=lambda x: x[1], reverse=True)
+                updated_postings = sorted(
+                    list(existing_postings.items()), key=lambda x: x[1], reverse=True
+                )
                 soundex_posting_list[token_soundex].postings = updated_postings
             else:
-                soundex_posting_list[token_soundex] = SoundexPosting(token_ids=[idx], postings=postings_sorted)
+                soundex_posting_list[token_soundex] = SoundexPosting(
+                    token_ids=[idx], postings=postings_sorted
+                )
 
         return posting_list, soundex_posting_list
+
 
 if __name__ == "__main__":
     raw_path = Path("./data/raw")
@@ -164,3 +173,6 @@ if __name__ == "__main__":
     processed_path.mkdir(parents=True, exist_ok=True)
 
     factory = PreprocessingFactory(docs_path=raw_path, proc_docs_path=processed_path)
+
+    for i in factory.posting_list:
+        print(i, factory.posting_list[i])

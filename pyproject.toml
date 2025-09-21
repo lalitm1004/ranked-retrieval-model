@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "jellyfish>=1.2.0",
+    "matplotlib>=3.10.6",
     "nltk>=3.9.1",
+    "numpy>=2.3.3",
     "pydantic>=2.11.9",
     "wordfreq>=3.1.1",
 ]

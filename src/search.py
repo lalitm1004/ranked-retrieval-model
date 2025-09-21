@@ -106,37 +106,38 @@ class Search:
         return [doc_id for doc_id, _ in scored_docs]
 
 
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+from typing import Dict
 
 
-def plot_idf_distribution(idf_dict: Dict[str, float], top_n: int = 50) -> None:
+def plot_full_idf_line(
+    idf_dict: Dict[str, float], filename: str = "idf_full_line_plot.png"
+):
     # Sort tokens by IDF descending
     sorted_items = sorted(idf_dict.items(), key=lambda x: x[1], reverse=True)
+    tokens, idfs = zip(*sorted_items)
 
-    # Optionally take only top_n for readability
-    tokens, idfs = zip(*sorted_items[:top_n])
-
-    # Create positions for the x-axis
     x_positions = np.arange(len(tokens))
 
-    # Plot bar chart
-    plt.figure(figsize=(12, 6))
-    plt.bar(x_positions, idfs, color="steelblue")
+    plt.figure(figsize=(14, 6))
+    plt.plot(x_positions, idfs, marker=".", linestyle="-", color="steelblue")
 
-    # Label axes and title
-    plt.xlabel("Tokens")
+    plt.xlabel("Tokens (sorted by descending IDF)")
     plt.ylabel("IDF Score")
-    plt.title(f"Top {top_n} Tokens by IDF Score")
+    plt.title("IDF Scores of All Tokens (Line Plot)")
 
-    # Rotate x-axis labels for readability
-    plt.xticks(x_positions, tokens, rotation=90)
+    # Optional: skip x-ticks if vocabulary is very large
+    if len(tokens) <= 50:
+        plt.xticks(x_positions, tokens, rotation=90)
+    else:
+        plt.xticks([])  # hide x-axis labels for readability
 
-    # Adjust layout to avoid clipping
     plt.tight_layout()
-
-    # Show the plot
-    plt.show()
+    plt.savefig(filename)
+    plt.close()
+    print(f"Full vocabulary IDF line plot saved to {filename}")
 
 
 # Usage after you compute idf_dict:

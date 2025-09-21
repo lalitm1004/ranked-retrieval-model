@@ -48,6 +48,7 @@ class QueryVectorizer:
                 all_doc_ids.add(doc_id)
 
         self.N = len(all_doc_ids)
+        print(self.N)
 
     def vectorize_query(self, query: str) -> Tuple[List[float], List[QueryToken]]:
         tokens = token_processing_helper(query)
@@ -136,4 +137,4 @@ if __name__ == "__main__":
     )
 
     a = qv.vectorize_query(query)
-    print(a)
+    # print(a)

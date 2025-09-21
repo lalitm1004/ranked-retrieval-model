@@ -43,6 +43,7 @@ class RawPosting(BaseModel):
 
 
 class Posting(BaseModel):
+    token_id: int
     postings: List[Tuple[int, int]]  # (doc_id, term frequency)
 
 class SoundexPosting(BaseModel):
@@ -138,7 +139,7 @@ class PreprocessingFactory:
 
         for idx, (token, postings) in enumerate(grouped_postings.items()):
             postings_sorted = sorted(postings, key=lambda x: x[1], reverse=True)
-            posting_list[token] = Posting(postings=postings_sorted)
+            posting_list[token] = Posting(token_id=idx, postings=postings_sorted)
             self.idw_map[idx] = token
 
             token_soundex = jellyfish.soundex(token)

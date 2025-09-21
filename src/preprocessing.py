@@ -43,7 +43,10 @@ class RawPosting(BaseModel):
 
 
 class Posting(BaseModel):
-    token_id: int
+    postings: List[Tuple[int, int]]  # (doc_id, term frequency)
+
+class SoundexPosting(BaseModel):
+    token_ids: List[int]
     postings: List[Tuple[int, int]]  # (doc_id, term frequency)
 
 
@@ -87,12 +90,13 @@ class PreprocessingFactory:
 
         self.docs: List[ProcessedDocument] = []
         self.postings: List[RawPosting] = []
+        self.idt_map: Dict[int, str] = {}
 
         self.__dir_process()
 
         posting_list, soundex_posting_list = self.__posting_list()
         self.posting_list: Dict[str, Posting] = posting_list
-        self.soundex_posting_list: Dict[str, Posting] = soundex_posting_list
+        self.soundex_posting_list: Dict[str, SoundexPosting] = soundex_posting_list
 
     def __dir_process(self) -> None:
         for index, file_name in enumerate(os.listdir(self.doc_dir)):
@@ -121,7 +125,7 @@ class PreprocessingFactory:
             posting = RawPosting(token=token, doc_id=doc_id, t_f=count)
             self.postings.append(posting)
 
-    def __posting_list(self) -> Tuple[Dict[str, Posting], Dict[str, Posting]]:
+    def __posting_list(self) -> Tuple[Dict[str, Posting], Dict[str, SoundexPosting]]:
         grouped_postings: Dict[str, List[Tuple[int, int]]] = defaultdict(list)
 
         for raw_posting in self.postings:
@@ -130,24 +134,26 @@ class PreprocessingFactory:
             )
 
         posting_list: Dict[str, Posting] = {}
-        soundex_posting_list: Dict[str, Posting] = {}
+        soundex_posting_list: Dict[str, SoundexPosting] = {}
 
         for idx, (token, postings) in enumerate(grouped_postings.items()):
             postings_sorted = sorted(postings, key=lambda x: x[1], reverse=True)
-            posting_list[token] = Posting(token_id=idx, postings=postings_sorted)
+            posting_list[token] = Posting(postings=postings_sorted)
+            self.idt_map[idx] = token
 
             token_soundex = jellyfish.soundex(token)
 
             if token_soundex in soundex_posting_list:
                 existing_postings = {doc_id: t_f for doc_id, t_f in soundex_posting_list[token_soundex].postings}
+                soundex_posting_list[token_soundex].token_ids.append(idx)
 
                 for doc_id, t_f in postings_sorted:
                     existing_postings[doc_id] = existing_postings.get(doc_id, 0) + t_f
 
                 updated_postings = sorted(list(existing_postings.items()), key=lambda x: x[1], reverse=True)
-                soundex_posting_list[token_soundex] = Posting(token_id=idx, postings=updated_postings)
+                soundex_posting_list[token_soundex].postings = updated_postings
             else:
-                soundex_posting_list[token_soundex] = Posting(token_id=idx, postings=postings_sorted)
+                soundex_posting_list[token_soundex] = SoundexPosting(token_ids=[idx], postings=postings_sorted)
 
         return posting_list, soundex_posting_list
 

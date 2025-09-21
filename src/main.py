@@ -1,8 +1,8 @@
 from pathlib import Path
 
+from document_vectorizer import DocumentTFVectorizer
 from preprocessing import PreprocessingFactory
 from query_vectorizer import QueryVectorizer, get_vocab_idf
-from document_vectorizer import DocumentTFVectorizer
 from search import Search
 
 

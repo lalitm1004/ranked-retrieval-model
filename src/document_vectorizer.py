@@ -1,7 +1,7 @@
 import math
 from pathlib import Path
 from pydantic import BaseModel
-from typing import List, Dict
+from typing import Dict, List
 
 from preprocessing import ProcessedDocument, Posting
 
@@ -59,18 +59,6 @@ if __name__ == "__main__":
     processed_path.mkdir(parents=True, exist_ok=True)
 
     factory = PreprocessingFactory(docs_path=raw_path, proc_docs_path=processed_path)
-
-    # print("Processed Documents:")
-    # for doc in factory.docs:
-    #     print(
-    #         f"Doc ID: {doc.doc_id}, File: {doc.file_path.name}, Tokens: {doc.tokens[:10]}"
-    #     )
-
-    # print("\nPosting List:")
-    # for posting in factory.posting_list:
-    #     print(
-    #         f"Token ID: {posting.token_id}, Token: {posting.token}, Postings: {posting.postings}"
-    #     )
 
     vectorizer = DocumentTFVectorizer(factory.docs, factory.posting_list)
     vectorizer.save_vectors(Path("./data/processed/vectors.jsonl"))

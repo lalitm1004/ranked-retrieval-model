@@ -1,8 +1,8 @@
 import math
+import jellyfish
 from collections import Counter
 from pydantic import BaseModel
 from typing import Dict, List, Tuple
-import jellyfish
 
 from preprocessing import Posting, SoundexPosting, token_processing_helper
 
@@ -48,7 +48,6 @@ class QueryVectorizer:
                 all_doc_ids.add(doc_id)
 
         self.N = len(all_doc_ids)
-        print(self.N)
 
     def vectorize_query(self, query: str) -> Tuple[List[float], List[QueryToken]]:
         tokens = token_processing_helper(query)

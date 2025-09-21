@@ -1,7 +1,7 @@
 [project]
 name = "ranked-retrieval-model"
 version = "0.1.0"
-description = "Add your description here"
+description = "Simple tf-idf ranked retrieval model"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [

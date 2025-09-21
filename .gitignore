@@ -1,8 +1,16 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
 .venv
 
+# Ruff
+.ruff_cache
+
+# Processed Data
 data/processed/
-
-__pycache__
-*.pyc
-
-.ruff_cache/

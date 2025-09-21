@@ -155,8 +155,6 @@ if __name__ == "__main__":
     idf_dict = get_vocab_idf(factory.posting_list)
     print(list(idf_dict.values()))
 
-    # plot_idf_distribution(idf_dict, top_n=50)
-
     qv = QueryVectorizer(
         factory.posting_list,
         factory.soundex_posting_list,

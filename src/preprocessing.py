@@ -1,17 +1,17 @@
 import os
 import string
+import jellyfish
 from collections import Counter, defaultdict
 from pathlib import Path
+from pydantic import BaseModel
 from typing import Dict, List, Tuple
+from wordfreq import top_n_list
 
-import jellyfish
 import nltk
 from nltk import pos_tag
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
-from pydantic import BaseModel
-from wordfreq import top_n_list
 
 
 nltk.download("punkt_tab")

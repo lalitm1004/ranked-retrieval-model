@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Config:
-    top_percentile: float = 1.0
+    top_percentile: float = 80.0
     max_fetch_count: int = 10
 
 

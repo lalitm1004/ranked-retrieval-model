@@ -1,6 +1,7 @@
 from typing import Dict, List, Set
 from config import Config
 import numpy as np
+from pathlib import Path
 
 from preprocessing import Posting, SoundexPosting
 from document_vectorizer import DocumentTFVector
@@ -34,6 +35,7 @@ class Search:
         query_tokens: List[QueryToken],
         posting_list: Dict[str, Posting],
         soundex_posting_list: Dict[str, SoundexPosting],
+        doc_id_to_path: Dict[int, Path],
     ) -> None:
         # Convert all document vectors to NumPy arrays once
         self.document_vectors = {
@@ -46,6 +48,8 @@ class Search:
         self.posting_list = posting_list
         self.soundex_posting_list = soundex_posting_list
 
+        self.doc_id_to_path = doc_id_to_path
+
     def _cosine_similarity(self, vec1: np.ndarray, vec2: np.ndarray) -> float:
         dot = np.dot(vec1, vec2)
         norm1 = np.linalg.norm(vec1)
@@ -54,7 +58,7 @@ class Search:
             return 0.0
         return dot / (norm1 * norm2)
 
-    def search(self, idf_values: Dict[str, float]) -> List[int]:
+    def search(self, idf_values: Dict[str, float]) -> List[Path]:
         # 1. Get cutoff idf
         idf_scores = list(idf_values.values())
         if not idf_scores:
@@ -103,44 +107,13 @@ class Search:
         # 5. Sort by similarity descending
         scored_docs.sort(key=lambda x: x[1], reverse=True)
 
-        return [doc_id for doc_id, _ in scored_docs]
+        result_paths: List[Path] = []
+        for doc_id, _ in scored_docs:
+            path = self.doc_id_to_path.get(doc_id)
+            if path:
+                result_paths.append(path)
 
-
-import matplotlib
-import matplotlib.pyplot as plt
-import numpy as np
-from typing import Dict
-
-
-def plot_full_idf_line(
-    idf_dict: Dict[str, float], filename: str = "idf_full_line_plot.png"
-):
-    # Sort tokens by IDF descending
-    sorted_items = sorted(idf_dict.items(), key=lambda x: x[1], reverse=True)
-    tokens, idfs = zip(*sorted_items)
-
-    x_positions = np.arange(len(tokens))
-
-    plt.figure(figsize=(14, 6))
-    plt.plot(x_positions, idfs, marker=".", linestyle="-", color="steelblue")
-
-    plt.xlabel("Tokens (sorted by descending IDF)")
-    plt.ylabel("IDF Score")
-    plt.title("IDF Scores of All Tokens (Line Plot)")
-
-    # Optional: skip x-ticks if vocabulary is very large
-    if len(tokens) <= 50:
-        plt.xticks(x_positions, tokens, rotation=90)
-    else:
-        plt.xticks([])  # hide x-axis labels for readability
-
-    plt.tight_layout()
-    plt.savefig(filename)
-    plt.close()
-    print(f"Full vocabulary IDF line plot saved to {filename}")
-
-
-# Usage after you compute idf_dict:
+        return result_paths
 
 
 if __name__ == "__main__":
@@ -173,8 +146,16 @@ if __name__ == "__main__":
 
     a = qv.vectorize_query(query)
 
+    doc_id_to_path = {doc.doc_id: doc.file_path for doc in factory.docs}
+
     s = Search(
-        dv.vectors, a[0], a[1], factory.posting_list, factory.soundex_posting_list
+        dv.vectors,
+        a[0],
+        a[1],
+        factory.posting_list,
+        factory.soundex_posting_list,
+        doc_id_to_path,
     )
-    res = s.search(idf_dict)
-    # print(res)
+
+    for i in s.search(idf_dict):
+        print(i)

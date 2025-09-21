@@ -90,7 +90,7 @@ class PreprocessingFactory:
 
         self.docs: List[ProcessedDocument] = []
         self.postings: List[RawPosting] = []
-        self.idt_map: Dict[int, str] = {}
+        self.idw_map: Dict[int, str] = {}
 
         self.__dir_process()
 
@@ -139,7 +139,7 @@ class PreprocessingFactory:
         for idx, (token, postings) in enumerate(grouped_postings.items()):
             postings_sorted = sorted(postings, key=lambda x: x[1], reverse=True)
             posting_list[token] = Posting(postings=postings_sorted)
-            self.idt_map[idx] = token
+            self.idw_map[idx] = token
 
             token_soundex = jellyfish.soundex(token)
 

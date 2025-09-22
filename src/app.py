@@ -22,6 +22,15 @@ def apply_custom_css():
         }
 
         /* Preview box for search results */
+        .similarity-score {
+            font-weight: bold;
+            color: #4CAF50 !important;
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-left: 8px;
+        }
+
         .preview-box {
             background-color: #1e1e1e !important;
             color: #fafafa !important;
@@ -98,6 +107,29 @@ def apply_custom_css():
     </style>
     """, unsafe_allow_html=True)
 
+    # ===== BEGIN SCROLL FIX CODE =====
+    # Add JavaScript to scroll to top when page loads
+    st.markdown("""
+    <script>
+        // Function to scroll to top
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
+        // Execute after page load
+        window.addEventListener('load', scrollToTop);
+
+        // Add a MutationObserver to detect DOM changes (for Streamlit's dynamic content)
+        const observer = new MutationObserver(function(mutations) {
+            scrollToTop();
+        });
+
+        // Start observing the document body for DOM changes
+        observer.observe(document.body, { childList: true, subtree: true });
+    </script>
+    """, unsafe_allow_html=True)
+    # ===== END SCROLL FIX CODE ====
+
 # Initialize the search engine components
 @st.cache_resource
 def initialize_search_engine():
@@ -144,7 +176,12 @@ def perform_search(query, search_components):
 
 # Function to read document content
 def read_document(file_path):
-    return file_path.read_text(encoding="utf-8")
+    # Check if file_path is a tuple (path, similarity_score)
+    if isinstance(file_path, tuple):
+        path = file_path[0]  # Extract the path from the tuple
+        return path.read_text(encoding="utf-8")
+    else:
+        return file_path.read_text(encoding="utf-8")
 
 # Function to create document preview (first 200 characters)
 def get_document_preview(content):
@@ -205,14 +242,27 @@ def search_page():
             preview = get_document_preview(content)
 
             st.markdown("---")
-            st.subheader(file_path.name)
-            st.write(f"**Path:** {file_path}")
+            # Extract path and similarity score
+            path, similarity = file_path if isinstance(file_path, tuple) else (file_path, 0.0)
+
+            # Display filename and similarity score
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                st.subheader(f"{path.name}")
+            with col2:
+                # Add both text and a visual progress bar
+                st.markdown(f'<div class="similarity-score">Similarity: {similarity:.4f}</div>', unsafe_allow_html=True)
+            st.write(f"**Path:** {path}")
             st.write("**Preview:**")
             st.markdown(f'<div class="preview-box">{preview}</div>', unsafe_allow_html=True)
 
             # View document button
             if st.button("View Document", key=f"view_{result_idx}"):
-                st.session_state.current_document = str(file_path)
+                # Store the path part if it's a tuple
+                document_path = path if isinstance(file_path, tuple) else file_path
+                st.session_state.current_document = str(document_path)
+                # Store similarity score for the document view
+                st.session_state.document_similarity = similarity
                 st.session_state.current_page = "document_view"
                 st.rerun()
 
@@ -246,13 +296,24 @@ def document_view_page():
     if 'current_document' in st.session_state:
         file_path = Path(st.session_state.current_document)
 
+        # Get similarity score if available
+        similarity_score = st.session_state.get('document_similarity', None)
+
         # Back button at the top
         if st.button("← Back to Results"):
             st.session_state.current_page = "search"
             st.rerun()
 
         # Document title and metadata
-        st.title(file_path.name)
+        title_col1, title_col2 = st.columns([3, 1])
+        with title_col1:
+            st.title(file_path.name)
+
+        # Display similarity score if available
+        if similarity_score is not None:
+            with title_col2:
+                st.markdown(f'<div class="similarity-score">Similarity: {similarity_score:.4f}</div>', unsafe_allow_html=True)
+
         st.write(f"**Path:** {file_path}")
 
         # Read and display document

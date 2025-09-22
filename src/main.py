@@ -43,8 +43,8 @@ def main():
             doc_id_to_path,
         ).search(idf_values)
 
-        for file in result:
-            print(file)
+        for file_path, cosine_similarity in result:
+            print(f"PATH: {file_path}, SIMILARITY: {cosine_similarity}")
 
         print()
 

@@ -2,10 +2,10 @@
 **Course**: CSD358 - Information Retrieval Lab  
 **Assignment**: Vector Space Model Implementation  
 **Due Date**: September 22, 2025, 10:00 PM
-**DEPLOYMENT LINK**: https://ranked-retrieval-model-ir.streamlit.app/
-**GITHUB LINK**: https://github.com/lalitm1004/ranked-retrieval-model
 
-[**Live Deployment**](https://ranked-retrieval-model-ir.streamlit.app/)
+**DEPLOYMENT LINK**: https://ranked-retrieval-model-ir.streamlit.app/
+
+**GITHUB LINK**: https://github.com/lalitm1004/ranked-retrieval-model
 
 ## Project Overview
 

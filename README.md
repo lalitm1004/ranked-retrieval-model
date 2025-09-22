@@ -3,6 +3,8 @@
 **Assignment**: Vector Space Model Implementation  
 **Due Date**: September 22, 2025, 10:00 PM
 
+[**Live Deployment**](https://ranked-retrieval-model-ir.streamlit.app/)
+
 ## Project Overview
 
 This project implements a ranked retrieval system using the Vector Space Model (VSM) with TF-IDF weighting scheme. The system processes a document corpus, builds inverted indices, and provides ranked search results based on cosine similarity between query and document vectors.

@@ -10,5 +10,6 @@ dependencies = [
     "nltk>=3.9.1",
     "numpy>=2.3.3",
     "pydantic>=2.11.9",
+    "streamlit>=1.32.0",
     "wordfreq>=3.1.1",
 ]

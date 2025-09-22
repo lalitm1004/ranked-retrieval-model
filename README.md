@@ -5,6 +5,8 @@
 **DEPLOYMENT LINK**: https://ranked-retrieval-model-ir.streamlit.app/
 **GITHUB LINK**: https://github.com/lalitm1004/ranked-retrieval-model
 
+[**Live Deployment**](https://ranked-retrieval-model-ir.streamlit.app/)
+
 ## Project Overview
 
 This project implements a ranked retrieval system using the Vector Space Model (VSM) with TF-IDF weighting scheme. The system processes a document corpus, builds inverted indices, and provides ranked search results based on cosine similarity between query and document vectors.

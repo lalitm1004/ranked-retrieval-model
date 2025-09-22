@@ -2,6 +2,8 @@
 **Course**: CSD358 - Information Retrieval Lab  
 **Assignment**: Vector Space Model Implementation  
 **Due Date**: September 22, 2025, 10:00 PM
+**DEPLOYMENT LINK**: https://ranked-retrieval-model-ir.streamlit.app/
+**GITHUB LINK**: https://github.com/lalitm1004/ranked-retrieval-model
 
 ## Project Overview
 
@@ -185,8 +187,6 @@ This implementation fully satisfies the assignment requirements:
 This ranked retrieval system provides a robust implementation of the Vector Space Model with modern web interface capabilities. The system efficiently processes document corpora, builds comprehensive indices, and delivers relevant search results through both web and command-line interfaces.
 
 ---
-
-**GitHub Repository**: [Include your repository link here]
 
 **Group Members**: 
 - Jia Khot, 2310110491

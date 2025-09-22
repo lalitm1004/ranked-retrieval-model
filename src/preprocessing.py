@@ -14,12 +14,12 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
 
-nltk.download("punkt_tab")
-nltk.download("punkt")
-nltk.download("stopwords")
-nltk.download("wordnet")
-nltk.download("omw-1.4")
-nltk.download("averaged_perceptron_tagger_eng")
+nltk.download("punkt_tab", quiet=True)
+nltk.download("punkt", quiet=True)
+nltk.download("stopwords", quiet=True)
+nltk.download("wordnet", quiet=True)
+nltk.download("omw-1.4", quiet=True)
+nltk.download("averaged_perceptron_tagger_eng", quiet=True)
 
 
 stop_words = set(stopwords.words("english"))

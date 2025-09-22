@@ -1,4 +1,4 @@
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Tuple
 from config import Config
 import numpy as np
 from pathlib import Path
@@ -58,7 +58,7 @@ class Search:
             return 0.0
         return dot / (norm1 * norm2)
 
-    def search(self, idf_values: Dict[str, float]) -> List[Path]:
+    def search(self, idf_values: Dict[str, float]) -> List[Tuple[Path, float]]:
         idf_scores = list(idf_values.values())
         if not idf_scores:
             return []
@@ -126,14 +126,14 @@ class Search:
         # Sort by similarity descending
         scored_docs.sort(key=lambda x: x[1], reverse=True)
 
-        # Return only top 10 paths
-        result_paths: List[Path] = []
-        for doc_id, _ in scored_docs[:10]:
+        # Return top 10 paths with scores
+        result_paths_with_scores: List[tuple[Path, float]] = []
+        for doc_id, sim in scored_docs[:10]:
             path = self.doc_id_to_path.get(doc_id)
             if path:
-                result_paths.append(path)
+                result_paths_with_scores.append((path, sim))
 
-        return result_paths
+        return result_paths_with_scores
 
 
 if __name__ == "__main__":
